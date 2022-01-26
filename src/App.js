@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
@@ -11,19 +11,23 @@ import Dialogs from './components/Dialogs/Dialogs';
 const App = () => {
 	return (
 		<Router>
+
 			<div className='app-wrapper'>
 				<Header />
 				<Navbar />
 				<div className='app-wrapper-content'>
-					<Route path='/profile' element={Profile} />
-					<Route path='/dialogs' element={Dialogs} />
-					{/* <Profile /> */}
+					<Routes>
+						<Route path='/Profile' element={<Profile />} />
+						<Route path='/Dialogs' element={<Dialogs />} />
+						{/* <Profile /> */}
+					</Routes>
 				</div>
 
 				<Footer />
 
 			</div>
-		// </Router>
+
+		</Router>
 
 	);
 }
