@@ -6,6 +6,10 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer'
 import Dialogs from './components/Dialogs/Dialogs';
+import Settings from './components/Settings/Settings';
+import News from './components/News/News';
+import Music from './components/Music/Music';
+
 
 
 const App = () => {
@@ -19,7 +23,10 @@ const App = () => {
 					<Routes>
 						<Route path='/Profile' element={<Profile />} />
 						<Route path='/Dialogs' element={<Dialogs />} />
-						{/* <Profile /> */}
+						<Route path='/News' element={<News />} />
+						<Route path='/Music' element={<Music />} />
+						<Route path='/Settings' element={<Settings />} />
+
 					</Routes>
 				</div>
 
