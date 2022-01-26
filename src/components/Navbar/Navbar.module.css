@@ -3,10 +3,16 @@
 	background-color: rgb(16, 174, 16);
 }
 
-.item {
+.item a {
 	color: white;
+	text-decoration: none;
 }
 
-.item.active {
+a.active {
 	color: gold;
+}
+
+.item a:hover {
+	text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+	color: rgb(163, 153, 6);
 }
