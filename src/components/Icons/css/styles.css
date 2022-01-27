@@ -1,0 +1,85 @@
+.icon-search,
+.icon-plus,
+.icon-ok,
+.icon-delete,
+.icon-synchronize,
+.icon-settings,
+.icon-instagram-new,
+.icon-facebook,
+.icon-cancel,
+.icon-cancel-2,
+.icon-checked-2,
+.icon-contacts,
+.icon-home,
+.icon-home-2,
+.icon-menu,
+.icon-music,
+.icon-speech-bubble,
+.icon-toolbox,
+.icon-user-male,
+.icon-key,
+.icon-idea,
+.icon-speech-bubble-2,
+.icon-info,
+.icon-news,
+.icon-menu-2,
+.icon-lock,
+.icon-twitter,
+.icon-linkedin,
+.icon-opened-folder,
+.icon-file,
+.icon-upload-2,
+.icon-edit,
+.icon-delete-sign,
+.icon-refresh,
+.icon-restart {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+	vertical-align: -0.1em;
+	margin-right: 20px;
+	color: goldenrod;
+}
+
+.icon-search > svg,
+.icon-plus > svg,
+.icon-ok > svg,
+.icon-delete > svg,
+.icon-synchronize > svg,
+.icon-settings > svg,
+.icon-instagram-new > svg,
+.icon-facebook > svg,
+.icon-cancel > svg,
+.icon-cancel-2 > svg,
+.icon-checked-2 > svg,
+.icon-contacts > svg,
+.icon-home > svg,
+.icon-home-2 > svg,
+.icon-menu > svg,
+.icon-music > svg,
+.icon-speech-bubble > svg,
+.icon-toolbox > svg,
+.icon-user-male > svg,
+.icon-key > svg,
+.icon-idea > svg,
+.icon-speech-bubble-2 > svg,
+.icon-info > svg,
+.icon-news > svg,
+.icon-menu-2 > svg,
+.icon-lock > svg,
+.icon-twitter > svg,
+.icon-linkedin > svg,
+.icon-opened-folder > svg,
+.icon-file > svg,
+.icon-upload-2 > svg,
+.icon-edit > svg,
+.icon-delete-sign > svg,
+.icon-refresh > svg,
+.icon-restart > svg {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+	vertical-align: -0.1em;
+}
