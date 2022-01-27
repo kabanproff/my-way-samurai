@@ -1,11 +1,18 @@
 .nav {
 	grid-area: n;
-	background-color: rgb(16, 174, 16);
+	background-color: #4f5a6e;
+	grid-row: l2/l3;
+	height: 100%;
+	padding: 10px;
 }
-
+.item {
+	padding: 10px 10px;
+	border-bottom: 1px solid #485265;
+}
 .item a {
 	color: white;
 	text-decoration: none;
+	text-shadow: 1px 1px 544545;
 }
 
 a.active {
