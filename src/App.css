@@ -12,7 +12,7 @@ body {
 	grid-template-columns: 2fr 10fr;
 	max-width: 1000px;
 	margin: 0 auto;
-	min-height: 100vh;
+	height: 100vh;
 }
 
 .app-wrapper-content {
