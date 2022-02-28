@@ -15,6 +15,9 @@
 	border-bottom: 1px solid #ffebeb;
 	cursor: pointer;
 }
+.dialog a {
+	text-decoration: none;
+}
 .active {
 	color: gold;
 	border-bottom: 1px solid #271010;

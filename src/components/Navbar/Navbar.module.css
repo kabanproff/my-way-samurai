@@ -4,6 +4,7 @@
 	grid-row: l2/l3;
 	height: 100%;
 	padding: 10px;
+	min-width: max-content;
 }
 .item {
 	padding: 10px 10px;
