@@ -1,16 +1,16 @@
 import React from "react";
 import s from './Post.module.css'
 
-const Post = (p) => {
+const Post = ({ message, countLikes }) => {
 	// console.log(p)
 
 	return (
 		<div className={s.item}>
 			<div><img alt='f' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvSANfsObwK8wTcBGikrcsM7PWcOzmCtJVg&usqp=CAU' />
-				<span>{p.message}</span>
+				<span>{message}</span>
 			</div>
 			<div>
-				👍{p.liks} <span>❤like❤</span>
+				👍{countLikes} <span>❤like❤</span>
 			</div>
 		</div>
 

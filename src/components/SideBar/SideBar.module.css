@@ -1,0 +1,9 @@
+.sideBar {
+	grid-area: n;
+	background-color: #4f5a6e;
+	grid-row: l2/l3;
+	height: 100%;
+	padding: 10px;
+	min-width: max-content;
+	color: white;
+}

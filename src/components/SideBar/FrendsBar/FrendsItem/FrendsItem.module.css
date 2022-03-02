@@ -1,0 +1,12 @@
+.frendsItem {
+	display: flex;
+	flex-direction: column;
+	max-width: 3vw;
+	gap: 10px;
+}
+.frendsItem img {
+	border-radius: 50%;
+}
+.frendsItem :last-child {
+	overflow: hidden;
+}

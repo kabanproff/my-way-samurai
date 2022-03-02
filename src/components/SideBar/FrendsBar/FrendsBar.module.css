@@ -1,0 +1,7 @@
+.blockFrends {
+	display: flex;
+	justify-content: space-between;
+}
+.frendsBar {
+	text-align: center;
+}
