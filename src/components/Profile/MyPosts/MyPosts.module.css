@@ -3,7 +3,13 @@ textarea {
 }
 .posts {
 	margin-top: 10px;
+	color: white;
 }
 .postsBlock {
 	padding: 10px;
+	font-size: 2vw;
+}
+.postsBlock textarea,
+.postsBlock button {
+	font-size: 2vw;
 }

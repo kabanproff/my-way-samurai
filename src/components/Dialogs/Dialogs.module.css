@@ -33,5 +33,7 @@
 	box-shadow: inset 0px 1px 5px 2px #592c7a;
 }
 
-.message {
+.messages textarea,
+.messages button {
+	font-size: 2vw;
 }

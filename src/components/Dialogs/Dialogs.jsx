@@ -1,12 +1,21 @@
 import React from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import s from './Dialogs.module.css';
 import Message from "./Messages/Message";
 import DialogItem from "./DilogsItem/DialogItem";
 
-const Dialogs = ({ dialogs }) => {
 
-	let { dialogsData, messagesData } = dialogs;
+
+const Dialogs = (props) => {
+
+
+	// console.log(forDialogs)
+	// console.log(dialogs)
+
+	let { dialogsData, messagesData, newMessageText } = props.dialogs;
+	// let { addMessage, valTextareaMessage } = props.forDialogs;
+	let newMessage = React.createRef();
+
 
 	let dialogsElements = dialogsData.map(({ id, name }) => {
 		return <DialogItem key={id} name={name} id={id} />
@@ -15,11 +24,21 @@ const Dialogs = ({ dialogs }) => {
 		return <Message key={id} message={message} />
 	})
 
-	let newMessage = React.createRef();
 
-	let addMessage = () => {
+
+
+	let addNewMessage = () => {
 		let message = newMessage.current.value
+		props.dispatch({ type: 'ADD-MESSAGE' })
+		// addMessage()
 		console.log(message)
+	}
+
+	let onTextChange = () => {
+		let text = newMessage.current.value
+		props.dispatch({ type: 'VAL-TEXTAREA-MESSAGE', newText: text })
+		// valTextareaMessage(text)
+		console.log(text)
 	}
 
 
@@ -33,8 +52,8 @@ const Dialogs = ({ dialogs }) => {
 					<div className={s.messages}>
 						{messagesElements},
 						<div>
-							<textarea ref={newMessage}></textarea>
-							<button onClick={addMessage}>addMessage</button>
+							<textarea onChange={onTextChange} ref={newMessage} value={newMessageText}></textarea>
+							<button onClick={addNewMessage}>addMessage</button>
 						</div>
 					</div>
 

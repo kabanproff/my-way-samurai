@@ -4,7 +4,7 @@ import s from './FrendsBar.module.css'
 import FrendsItem from './FrendsItem/FrendsItem'
 
 const FrendsBar = ({ frendsBar }) => {
-	console.log(frendsBar)
+	// console.log(frendsBar)
 
 	const [frends, setFrends] = useState(null)
 
@@ -15,14 +15,14 @@ const FrendsBar = ({ frendsBar }) => {
 	useEffect(() => {
 
 		let users = Promise.all(frendsBar.map(i => getUser(i.url)));
-		console.log(users)
+		// console.log(users)
 		users.then(r => {
 			console.log(r)
 			return setFrends(r)
 		})
 			.catch(e => console.log(e))
 
-		console.log(frends)
+		// console.log(frends)
 
 	}, [])
 
