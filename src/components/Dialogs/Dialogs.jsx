@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import s from './Dialogs.module.css';
 import Message from "./Messages/Message";
 import DialogItem from "./DilogsItem/DialogItem";
-
+import { addNewMessageActionCreator, onTextChangeActionCreator } from "../../redux/message-reduser";
 
 
 const Dialogs = (props) => {
@@ -29,14 +29,15 @@ const Dialogs = (props) => {
 
 	let addNewMessage = () => {
 		let message = newMessage.current.value
-		props.dispatch({ type: 'ADD-MESSAGE' })
+		props.dispatch(addNewMessageActionCreator())
 		// addMessage()
 		console.log(message)
 	}
 
 	let onTextChange = () => {
 		let text = newMessage.current.value
-		props.dispatch({ type: 'VAL-TEXTAREA-MESSAGE', newText: text })
+
+		props.dispatch(onTextChangeActionCreator(text))
 		// valTextareaMessage(text)
 		console.log(text)
 	}

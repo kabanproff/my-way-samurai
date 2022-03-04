@@ -1,7 +1,5 @@
-let rerenderEntireTree = () => {
-	console.log('State has change')
-}
-
+import messageReduser from "./message-reduser"
+import profileReduser from "./profile-reduser"
 
 
 let store = {
@@ -49,40 +47,12 @@ let store = {
 		this._callSubscriber = observer
 	},
 	dispatch(action) {
-		if (action.type === 'ADD-POST') {
-			let newPost = {
-				id: ++this._state.postsPage.postsData.length,
-				message: this._state.postsPage.newPostText,
-				countLikes: 0
-			}
+		this._state.postsPage = profileReduser(this._state.postsPage, action)
+		this._state.dialogsPage = messageReduser(this._state.dialogsPage, action)
 
-			this._state.postsPage.postsData.push(newPost)
-			this._state.postsPage.newPostText = ''
-
-		} else if (action.type === 'VAL-TEXTAREA-POST') {
-			this._state.postsPage.newPostText = action.newText
-			this._callSubscriber(this._state)
-
-		} else if (action.type === 'ADD-MESSAGE') {
-
-			let message = {
-				id: ++this._state.dialogsPage.messagesData.length,
-				message: this._state.dialogsPage.newMessageText
-			}
-
-			this._state.dialogsPage.messagesData.push(message)
-			this._state.dialogsPage.newMessageText = ''
-			this._callSubscriber(this._state)
-
-		} else if (action.type === 'VAL-TEXTAREA-MESSAGE') {
-
-			this._state.dialogsPage.newMessageText = action.newText;
-			this._callSubscriber(this._state)
-
-		}
+		this._callSubscriber(this._state)
 	}
 }
-
 
 window.state = store._state
 
