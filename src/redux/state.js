@@ -1,5 +1,5 @@
-import messageReduser from "./message-reduser"
-import profileReduser from "./profile-reduser"
+import messageReduser from "./message-reducer"
+import profileReduser from "./profile-reducer"
 
 
 let store = {
