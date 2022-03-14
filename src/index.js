@@ -4,22 +4,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
-console.log(store.getState())
+import {Provider} from 'react-redux'
+
 let rerender = () => {
-	debugger
+
 	ReactDOM.render(
+
 		<Router>
-			<App appState={store.getState()}
-				dispatch={store.dispatch.bind(store)}
-			// forPost={{ addPost: store.addPost.bind(store), valTextareaPost: store.valTextareaPost.bind(store) }}
-			// forDialogs={{ addMessage: store.addMessage.bind(store), valTextareaMessage: store.valTextareaMessage.bind(store) }} 
-			/>
-		</Router>,
-
-
-		document.getElementById('root')
+			<Provider store={store}>
+			<App/>
+			</Provider>
+		</Router>, document.getElementById('root')
 	);
 }
+// debugger
 rerender()
 store.subscribe(rerender)
 

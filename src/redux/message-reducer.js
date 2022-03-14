@@ -35,6 +35,7 @@ const messageReducer = (state = initialState, action) => {
 			return state
 		}
 		case VAL_TEXTAREA_MESSAGE: {
+			// debugger
 			state.newMessageText = action.newText;
 			return state
 
