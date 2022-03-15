@@ -7,9 +7,9 @@ textarea {
 }
 .postsBlock {
 	padding: 10px;
-	font-size: 2vw;
+	font-size: 4vw;
 }
 .postsBlock textarea,
 .postsBlock button {
-	font-size: 2vw;
+	font-size: 4vw;
 }

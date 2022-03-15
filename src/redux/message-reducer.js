@@ -1,6 +1,40 @@
 
 const ADD_MESSAGE = 'ADD_MESSAGE'
-const VAL_TEXTAREA_MESSAGE = 'VAL_TEXTAREA_MESSAGE'
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT'
+
+// const deepClone = function reclone(obj) {
+	
+	
+// 	function thisArray(obj){
+// 		return obj.reduce((pr,i)=>{
+// 			return typeof i === 'object' 
+// 			? (pr.push(reclone(i)),pr)
+// 			:(pr.push(i),pr)
+			
+// 		},[])
+// 	}
+// 	function thisObject(obj){
+// 		let clone = {}
+// 		for (let [k,v] of Object.entries(obj)) {
+
+// 			(Array.isArray(v)) 
+// 			? clone[k] = reclone(v)
+// 			   : (typeof v === 'object')
+// 				? clone[k] = reclone(v)
+// 				: clone[k] = obj[k]
+// 		}
+	
+// 	return clone
+// 	}
+
+// 	if (obj === null) return null
+
+// 	if (Array.isArray(obj))	return thisArray(obj)
+	
+// 	if (typeof obj === 'object') return thisObject(obj)
+
+
+// }
 
 let initialState = {
 	dialogsData: [
@@ -22,33 +56,32 @@ let initialState = {
 }
 
 const messageReducer = (state = initialState, action) => {
+
 	switch (action.type) {
 		case ADD_MESSAGE: {
 			let message = {
-				id: ++state.messagesData.length,
+				id: state.messagesData.length +1,
 				message: state.newMessageText
 			}
-
-			state.messagesData.push(message)
-			state.newMessageText = ''
-
-			return state
+			return {
+				...state,
+				messagesData: [...state.messagesData, message],
+				newMessageText: ''
+			}
 		}
-		case VAL_TEXTAREA_MESSAGE: {
-			// debugger
-			state.newMessageText = action.newText;
-			return state
-
+		case UPDATE_NEW_MESSAGE_TEXT: {
+			return {
+				...state,
+				newMessageText: action.newText
+			}
 		}
-		default: {
-			return state
-		}
+		default: return state
 	}
 }
 
 
 export const addNewMessageActionCreator = () => ({ type: ADD_MESSAGE })
-export const onTextChangeActionCreator = (text) => ({ type: VAL_TEXTAREA_MESSAGE, newText: text })
+export const onTextChangeActionCreator = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text })
 
 
 export default messageReducer

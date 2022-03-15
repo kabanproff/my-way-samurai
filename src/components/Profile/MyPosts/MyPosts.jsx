@@ -31,6 +31,7 @@ console.log(props)
 			</div>
 			<div className={s.posts}>
 				{props.posts.map(({ id, message, countLikes }) => {
+					
 					return <Post key={id} message={message} countLikes={countLikes} />
 				})}
 			</div>
