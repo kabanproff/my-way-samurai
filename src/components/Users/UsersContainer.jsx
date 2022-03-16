@@ -8,25 +8,25 @@ import Preloader from '../common/Preloader/Preloader'
 class UsersContainer extends React.Component {
 
 	componentDidMount() {
-		this.props.toggleIsFetching()
+		this.props.setIsFetchingAC()
 		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
 			.then(response => {
 
-				this.props.setUsers(response.data.items)
-				this.props.setTotalUsersCount(response.data.totalCount)
-				this.props.toggleIsFetching()
+				this.props.setUsersAC(response.data.items)
+				this.props.setTotalUsersCountAC(response.data.totalCount)
+				this.props.setIsFetchingAC()
 
 			})
 	}
 
 	onPageChanged = (pageNumber) => {
-		this.props.setCurrentPage(pageNumber)
-		this.props.toggleIsFetching()
+		this.props.setCurrentPageAC(pageNumber)
+		this.props.setIsFetchingAC()
 		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
 			.then(response => {
 
-				this.props.setUsers(response.data.items)
-				this.props.toggleIsFetching()
+				this.props.setUsersAC(response.data.items)
+				this.props.setIsFetchingAC()
 			})
 
 	}
@@ -65,31 +65,14 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		follow: (userId) => {
-			dispatch(followAC(userId))
-		},
-		unfollow: (userId) => {
-			dispatch(unFollowAC(userId))
-		},
-		setUsers: (users) => {
-			dispatch(setUsersAC(users))
-		},
-		setImages: (images) => {
-			dispatch(setImagesAC(images))
-		},
-		setCurrentPage: (currentPage) => {
-			dispatch(setCurrentPageAC(currentPage))
-		},
-		setTotalUsersCount: (totalUsersCount) => {
-			dispatch(setTotalUsersCountAC(totalUsersCount))
-		},
-		toggleIsFetching: () => {
-			dispatch(setIsFetchingAC())
-		}
 
-	}
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+export default connect(mapStateToProps, {
+	followAC,
+	unFollowAC,
+	setUsersAC,
+	setImagesAC,
+	setCurrentPageAC,
+	setTotalUsersCountAC,
+	setIsFetchingAC
+})(UsersContainer)
