@@ -20,6 +20,7 @@ body {
 	background-color: #747a87;
 	height: 100%;
 	grid-row: l2/l3;
+	position: relative;
 }
 
 /* ------------img--------------- */

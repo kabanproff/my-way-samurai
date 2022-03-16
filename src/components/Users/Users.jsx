@@ -3,7 +3,7 @@ import s from './users.module.css'
 const defaultIcons = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDpxJV62_axM0N-z8vfxnZeGBUIqclFn187w&usqp=CAU'
 
 const Users = (props) => {
-	console.log(props)
+	// console.log(props)
 	let pages = []
 	for (let i = 1; i <= 10; i++) pages.push(i)
 	return (
