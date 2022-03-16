@@ -25,3 +25,22 @@
 	margin: 0 auto;
 	display: block;
 }
+.navPages {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	padding-inline-start: 0;
+	column-gap: 10px;
+}
+li {
+	text-align: center;
+	font-size: 2vw;
+	font-weight: bold;
+	color: #fff;
+}
+li:hover {
+	cursor: pointer;
+}
+.selectedPage {
+	color: aqua;
+}

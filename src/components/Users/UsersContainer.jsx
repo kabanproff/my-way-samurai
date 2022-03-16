@@ -1,11 +1,13 @@
 import UsersC from './UsersC'
 import { connect } from 'react-redux'
-import { followAC, setImagesAC, setUsersAC, unFollowAC } from '../../redux/users-reduser'
+import { followAC, setCurrentPageAC, setImagesAC, setTotalUsersCountAC, setUsersAC, unFollowAC } from '../../redux/users-reduser'
 
 const mapStateToProps = (state) => {
 	return {
 		users: state.usersPage.users,
-		images: state.usersPage.images
+		pageSize: state.usersPage.pageSize,
+		totalUsersCount: state.usersPage.totalUsersCount,
+		currentPage: state.usersPage.currentPage
 	}
 }
 
@@ -22,6 +24,12 @@ const mapDispatchToProps = (dispatch) => {
 		},
 		setImages: (images) => {
 			dispatch(setImagesAC(images))
+		},
+		setCurrentPage: (currentPage) => {
+			dispatch(setCurrentPageAC(currentPage))
+		},
+		setTotalUsersCount: (totalUsersCount) => {
+			dispatch(setTotalUsersCountAC(totalUsersCount))
 		}
 
 	}

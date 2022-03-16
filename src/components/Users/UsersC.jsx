@@ -7,30 +7,60 @@ class UsersC extends React.Component {
 	constructor(props) {
 		super(props)
 		alert('render')
-		axios.get('https://social-network.samuraijs.com/api/1.0/users?')
+
+	}
+
+	componentDidMount() {
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+			.then(response => {
+
+				this.props.setUsers(response.data.items)
+				this.props.setTotalUsersCount(response.data.totalCount)
+			})
+	}
+
+	onPageChanged = (pageNumber) => {
+		this.props.setCurrentPage(pageNumber)
+
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
 			.then(response => {
 
 				this.props.setUsers(response.data.items)
 			})
+
 	}
-	getUsers = () => {
-		if (this.props.users.length === 0) {
 
-			// axios.get('https://api.github.com/users')
-			axios.get('https://social-network.samuraijs.com/api/1.0/users?')
-				.then(response => {
-
-					this.props.setUsers(response.data.items)
-				})
-
-		}
-	}
 	render() {
+		console.log(this.props.users)
+
+		// let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
+		let pages = []
+
+		// debugger
+		for (let i = 1; i <= 10; i++) pages.push(i)
 		return (
 			<div className={s.wrapperUsers} >
 				<div className={s.users}>
-					<button className={s.butGet} onClick={this.getUsers}>getUsers</button>
+					<div className={s.wrapNavPages}>
+						<ul className={s.navPages}>
+							{
+								pages.map(i => {
+									return <li key={i}
+										className={
+											this.props.currentPage === i
+												? s.selectedPage : undefined
+										}
+										onClick={() => { this.onPageChanged(i) }}
+									>{i}</li>
+								})
+							}
+							{/* <li className={s.selectedPage} >1</li> */}
+
+						</ul>
+					</div>
+					{/* <button className={s.butGet} onClick={this.getUsers}>getUsers</button> */}
 					{
+
 						this.props.users.map(i => (
 							<div className={s.user} key={i.id}>
 
@@ -64,11 +94,6 @@ class UsersC extends React.Component {
 								</div>
 
 							</div>))
-					}
-				</div>
-				<div>
-					{
-						this.props.images.map((i, d) => <img key={d} src={i.thumbnail} alt="" />)
 					}
 				</div>
 			</div>
