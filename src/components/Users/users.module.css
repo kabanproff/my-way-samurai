@@ -1,0 +1,25 @@
+.photo{
+	width: 60px;
+	height: 60px;
+
+}
+.users{
+	padding: 20px;
+}
+.user{
+	display:flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+
+}
+.text{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+.text div{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

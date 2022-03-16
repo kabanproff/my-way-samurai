@@ -9,7 +9,7 @@ import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Sidebar from './components/SideBar/SideBar';
-import Users from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 
@@ -29,7 +29,7 @@ const App = () => {
 						<DialogsContainer />
 						} />
 					<Route path='/users' element={
-						<Users />
+						<UsersContainer />
 						} />
 					<Route path='/news' element={<News />} />
 					<Route path='/music' element={<Music />} />
