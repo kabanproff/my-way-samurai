@@ -1,4 +1,4 @@
-import Users from './Users'
+import UsersC from './UsersC'
 import { connect } from 'react-redux'
 import { followAC, setImagesAC, setUsersAC, unFollowAC } from '../../redux/users-reduser'
 
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Users)
+export default connect(mapStateToProps, mapDispatchToProps)(UsersC)

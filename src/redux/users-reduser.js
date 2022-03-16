@@ -11,11 +11,11 @@ let initialState = {
 		// { id: 3, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB_lt9056_KbjqZQSTHvioprDk6y2eTXiTUg&usqp=CAU', followed: false, fullName: 'Ирина', status: 'Замужем', location: { city: 'Гродно', country: 'Belarus' } },
 		// { id: 4, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDpxJV62_axM0N-z8vfxnZeGBUIqclFn187w&usqp=CAU', followed: true, fullName: 'Kiril', status: 'I\'am the BOSS', location: { city: 'Moscow', country: 'Rassia' } },
 	],
-	images:[]
+	images: []
 }
 
 const usersReducer = (state = initialState, action) => {
-
+	// debugger
 
 	switch (action.type) {
 
@@ -39,6 +39,7 @@ const usersReducer = (state = initialState, action) => {
 				})
 			}
 		}
+
 		case SET_USERS: {
 			return {
 				...state,
@@ -59,7 +60,7 @@ const usersReducer = (state = initialState, action) => {
 
 export const followAC = (userId) => ({ type: FOLLOW, userId })
 export const unFollowAC = (userId) => ({ type: UNFOLLOW, userId })
-export const setUsersAC = (users) => ( { type: SET_USERS, users } )
-export const setImagesAC = (images) => ( { type: SET_IMAGES, images } )
+export const setUsersAC = (users) => ({ type: SET_USERS, users })
+export const setImagesAC = (images) => ({ type: SET_IMAGES, images })
 
 export default usersReducer

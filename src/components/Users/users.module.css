@@ -1,25 +1,27 @@
-.photo{
+.photo {
 	width: 60px;
 	height: 60px;
-
 }
-.users{
+.users {
 	padding: 20px;
 }
-.user{
-	display:flex;
+.user {
+	display: flex;
 	justify-content: space-between;
 	margin-bottom: 10px;
-
 }
-.text{
+.text {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
 }
-.text div{
+.text div {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+.butGet {
+	margin: 0 auto;
+	display: block;
 }
