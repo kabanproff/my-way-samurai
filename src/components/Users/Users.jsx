@@ -1,9 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import s from './users.module.css'
 const defaultIcons = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDpxJV62_axM0N-z8vfxnZeGBUIqclFn187w&usqp=CAU'
 
 const Users = (props) => {
-	// console.log(props)
 	let pages = []
 	for (let i = 1; i <= 10; i++) pages.push(i)
 	return (
@@ -22,22 +22,20 @@ const Users = (props) => {
 								>{i}</li>
 							})
 						}
-						{/* <li className={s.selectedPage} >1</li> */}
-
 					</ul>
 				</div>
-				{/* <button className={s.butGet} onClick={this.getUsers}>getUsers</button> */}
 				{
-
 					props.users.map(i => (
 						<div className={s.user} key={i.id}>
 
 							<div>
 								<div>
-									<img alt='d'
-										className={s.photo}
-										src={i.photos.small !== null
-											? i.photos.small : defaultIcons} />
+									<NavLink to={'/profile/' + i.id}>
+										<img alt='d'
+											className={s.photo}
+											src={i.photos.small !== null
+												? i.photos.small : defaultIcons} />
+									</NavLink>
 								</div>
 								<div>
 									{
@@ -63,7 +61,6 @@ const Users = (props) => {
 									</div>
 								</div>
 							</div>
-
 						</div>))
 				}
 			</div>
