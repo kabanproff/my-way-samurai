@@ -4,8 +4,12 @@ import s from './users.module.css'
 const defaultIcons = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDpxJV62_axM0N-z8vfxnZeGBUIqclFn187w&usqp=CAU'
 
 const Users = (props) => {
+	// debugger
+	let countPages = Math.ceil(props.totalUsersCount / props.pageSize)
 	let pages = []
-	for (let i = 1; i <= 10; i++) pages.push(i)
+	// for (let i = 1; i <= 10; i++) pages.push(i)
+	for (let i = countPages - 5; i <= countPages; i++) pages.push(i)
+
 	return (
 		<div className={s.wrapperUsers} >
 			<div className={s.users}>

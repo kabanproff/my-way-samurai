@@ -5,37 +5,21 @@ import Profile from './Profile'
 import { setUserProfile } from '../../redux/profile-reducer';
 
 
-
 class ProfileContainer extends React.Component {
 
-
-
 	componentDidMount() {
+		// console.log(this.props)
 		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${2}`)
 			.then(rs => {
 				// console.log(rs)
 				this.props.setUserProfile(rs.data)
-
 			})
-
-		// fetch(`https://social-network.samuraijs.com/api/1.0/profile/${2}`)
-		// 	.then(response => {
-		// 		console.log(response instanceof Response)
-		// 		return response.json()
-		// 	})
-		// 	.then(rs => {
-		// 		console.log(rs)
-		// 	})
 	}
 
 
 	render() {
-		console.log(this.props)
 		return (
-
-			<Profile {...this.props}
-				profile={this.props.profile}
-			/>
+			<Profile profile={this.props.profile} />
 		)
 	}
 }

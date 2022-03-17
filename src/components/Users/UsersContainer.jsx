@@ -32,7 +32,7 @@ class UsersContainer extends React.Component {
 	}
 
 	render() {
-		// console.log(this.props)
+		console.log(this.props)
 		// debugger
 		return (
 			<>
@@ -48,6 +48,7 @@ class UsersContainer extends React.Component {
 					users={this.props.users}
 					unfollow={this.props.unfollow}
 					follow={this.props.follow}
+					totalUsersCount={this.props.totalUsersCount}
 				/>
 			</>
 		)
