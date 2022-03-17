@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer'
@@ -22,19 +22,19 @@ const App = () => {
 			// frendsBar={props.appState.frendsBar}
 			/>
 			<div className='app-wrapper-content'>
-				<Routes>
-					<Route path='/profile/*' element={
-						<ProfileContainer />} />
-					<Route path='/dialogs/*' element={
+				<Switch>
+					<Route path='/profile/:userId?' render={() => (
+						<ProfileContainer />)} />
+					<Route path='/dialogs/*' render={() => (
 						<DialogsContainer />
-					} />
-					<Route path='/users' element={
+					)} />
+					<Route path='/users' render={() => (
 						<UsersContainer />
-					} />
-					<Route path='/news' element={<News />} />
-					<Route path='/music' element={<Music />} />
-					<Route path='/settings' element={<Settings />} />
-				</Routes>
+					)} />
+					<Route path='/news' render={() => (<News />)} />
+					<Route path='/music' render={() => (<Music />)} />
+					<Route path='/settings' render={() => (<Settings />)} />
+				</Switch>
 			</div>
 			<Footer />
 		</div>

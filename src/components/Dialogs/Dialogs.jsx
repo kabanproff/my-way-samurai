@@ -1,12 +1,13 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 import s from './Dialogs.module.css';
 import Message from "./Messages/Message";
 import DialogItem from "./DilogsItem/DialogItem";
+import { Switch } from "react-router-dom";
 
 
 const Dialogs = (props) => {
-console.log(props)
+	console.log(props)
 
 
 	let { dialogsData, messagesData, newMessageText } = props.dialogsPage;
@@ -30,7 +31,7 @@ console.log(props)
 	let onNewMessageChange = (e) => {
 		// debugger
 		let body = e.target.value
-		props.updateNewMessageBody(body) 
+		props.updateNewMessageBody(body)
 		console.log(body)
 	}
 
@@ -40,18 +41,18 @@ console.log(props)
 			<div className={s.dialogsItems}>
 				{dialogsElements}
 			</div>
-			<Routes>
+			<Switch>
 				<Route path={'1'} element={
 					<div className={s.messages}>
 						{messagesElements}
 						<div>
-							<textarea style={{fontSize:'20px'}} onChange={onNewMessageChange} ref={newMessage} value={newMessageText}></textarea>
+							<textarea style={{ fontSize: '20px' }} onChange={onNewMessageChange} ref={newMessage} value={newMessageText}></textarea>
 							<button onClick={onSendMessageClick}>addMessage</button>
 						</div>
 					</div>
 
 				} />
-			</Routes>
+			</Switch>
 		</div>
 	)
 }
